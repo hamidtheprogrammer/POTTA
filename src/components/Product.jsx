@@ -53,7 +53,7 @@ const Product = () => {
       </aside>
       <aside className="max-md:flxColStart max-md:px-9 md:justify-center md:flxrowCenter gap-20 mt-20 relative w-[90%]">
         {about.map((abt) => (
-          <div className="flxColStart gap-5">
+          <div key={abt.header} className="flxColStart gap-5">
             <h1 className="text-3xl max-w-[400px] text-balance font-[400]">
               {abt.header}
             </h1>
@@ -69,7 +69,10 @@ const Product = () => {
       <hr className="hr" />
       <div className="w-full relative mt-32 flxcolCenter gap-40 md:px-10">
         {forYouProducts.map((product, index) => (
-          <div className="relative w-full max-md:flxcolCenter md:gap-9 max-md:gap-10 md:flxrowCenter">
+          <div
+            key={index}
+            className="relative w-full max-md:flxcolCenter md:gap-9 max-md:gap-10 md:flxrowCenter"
+          >
             <div
               className={`relative max-md:w-[90%] md:w-[90%] flxcolCenter ${
                 index === 1 && "md:order-2"

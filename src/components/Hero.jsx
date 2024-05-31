@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./UI/Button";
-import heroImage from "C:/Users/HAMID/Downloads/POTTA/src/assets/Realistic-porselain-vase-for-flowers-or-plants-isolated-on-transparent-background-PNG.png";
+
+import { Button, heroImage, heroImage2 } from "../contants/Imports";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -21,8 +21,13 @@ const Hero = () => {
             <Button name={"shop collection"} />
           </Link>
         </div>
-        <div className="h-[300px] w-[300px]">
+        <div className="relative h-[300px] w-[300px]">
           <img src={heroImage} alt="vase image" />
+          <img
+            className="absolute w-[100%] h-[100%] top-0 left-0"
+            src={""}
+            alt=""
+          />
         </div>
       </div>
     </section>

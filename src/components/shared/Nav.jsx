@@ -11,9 +11,7 @@ const Nav = () => {
   const hideNav = () => {
     setSideNav((prevSideNav) => !prevSideNav);
   };
-  useEffect(() => {
-    console.log(sideNav);
-  }, [sideNav]);
+  useEffect(() => {}, [sideNav]);
 
   useEffect(() => {
     const navContainer = document.querySelector(`.nav-container`);
