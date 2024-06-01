@@ -1,7 +1,8 @@
 import React from "react";
-import { Hero, Nav, Product } from "../contants/Imports";
+import { Hero, Nav, Product, useResetScrollBar } from "../contants/Imports";
 
 const Home = () => {
+  useResetScrollBar();
   return (
     <>
       <Hero />

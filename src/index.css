@@ -60,6 +60,9 @@
   .hr {
     @apply bg-black/50 w-full relative mt-32;
   }
+  .product-wrapper {
+    @apply relative flxColStart gap-5  pb-3 transition duration-500  max-md:w-[80vw];
+  }
 }
 
 body,

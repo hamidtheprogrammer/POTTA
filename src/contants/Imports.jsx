@@ -7,7 +7,14 @@ import NavbarItems from "../components/shared/NavbarItems";
 import MobileNav from "../components/shared/MobileNav";
 import FillStore from "../components/UI/FillStore";
 import Button from "../components/UI/Button";
+import Footer from "../components/shared/Footer";
+import Banner from "../components/UI/Banner";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
+import Details from "../Pages/Product-details";
+import useResetScrollBar from "../components/UI/useResetScrollBar";
 import logo from "C:/Users/HAMID/Downloads/POTTA/src/assets/Screenshot 2024-05-29 062948.png";
+import Cart from "../components/shared/Cart";
 import heroImage2 from "C:/Users/HAMID/Downloads/POTTA/src/assets/Flower Vase Png Image Background - Transparent Flower Vase Png, Png Download(1200x1200) - PinPng.jpg";
 import heroImage from "C:/Users/HAMID/Downloads/POTTA/src/assets/Realistic-porselain-vase-for-flowers-or-plants-isolated-on-transparent-background-PNG.png";
 export {
@@ -23,4 +30,11 @@ export {
   Button,
   heroImage,
   heroImage2,
+  Footer,
+  Banner,
+  About,
+  Contact,
+  Details,
+  Cart,
+  useResetScrollBar,
 };
