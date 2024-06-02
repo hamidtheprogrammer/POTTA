@@ -10,6 +10,7 @@ const Nav = () => {
   const [sideNav, setSideNav] = useState(false);
 
   const hideNav = () => {
+    isCartOpen && hideCart();
     setSideNav((prevSideNav) => !prevSideNav);
   };
 

@@ -7,6 +7,7 @@ const ProductCard = ({
   price,
   img,
   category,
+  quantity,
   quick,
   addItem,
 }) => {
@@ -55,11 +56,15 @@ const ProductCard = ({
         </p>
         <p>
           <span className="font-[430]">Quantity: </span>{" "}
-          <span className="details-text ">{20}</span>
+          <span className="details-text ">{quantity}</span>
         </p>
-        <button onClick={addItem} className="mt-5">
-          <Button name={"ADD TO CART"} />
-        </button>
+        <div onClick={addItem} className="mt-5 cursor-pointer">
+          {quantity > 0 ? (
+            <Button name={"ADD TO CART"} />
+          ) : (
+            <span className="text-red-600">Out Of Stock</span>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -23,6 +23,7 @@ const Details = () => {
             name={product.name}
             price={product.price}
             category={product.category}
+            quantity={product.quantity}
             img={""}
           />
         )}

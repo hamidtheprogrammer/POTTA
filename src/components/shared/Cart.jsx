@@ -3,14 +3,25 @@ import { useContext } from "react";
 import { GlobalContext } from "../../ContextApi/GlobalState";
 
 const Cart = () => {
-  const { getCart, isCartOpen } = useContext(GlobalContext);
+  const { getCart, setIsCartOpen, isCartOpen, removeItemFromCart } =
+    useContext(GlobalContext);
   return (
     <section
-      className={`fixed top-0 z-[9999] bg-white max-md:w-full max-w-[500px] min-h-[100vh] ${
+      className={`fixed top-0 z-[9999] md:w-1/2 bg-white max-md:w-full max-w-[500px] min-h-[100vh] ${
         !isCartOpen && "translate-x-[-100%] opacity-0"
       } transition duration-700 pl-10 pt-7`}
     >
-      <h1 className="">Your Cart</h1>
+      <div className="flxBtw flex-row pr-10">
+        <h1 className="">Your Cart</h1>
+        <button
+          className="text-lg"
+          onClick={() => {
+            setIsCartOpen(false);
+          }}
+        >
+          X
+        </button>
+      </div>
       <hr className="my-5 w-full relative left-0" />
       <ul className="flxColStart gap-5">
         {getCart?.map((item) => (
@@ -23,9 +34,17 @@ const Cart = () => {
               />
             </div>
             <div className="flxColStart">
-              <p>{item.name}</p>
-              <p>{item.price}</p>
-              <button className="hover:underline hover:primaryTextCol">
+              <p className="text-lg font-[430]">{item.name}</p>
+              <span className="text-sm font-[430] text-black/60">
+                <p>Quantity: {item.quantity}</p>
+                <p>{item.price}</p>
+              </span>
+              <button
+                onClick={() => {
+                  removeItemFromCart(item);
+                }}
+                className="hover:underline hover:primaryTextCol text-[0.9rem]"
+              >
                 Remove
               </button>
             </div>

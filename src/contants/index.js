@@ -1,7 +1,3 @@
-import { color } from "framer-motion";
-import coffeeCup from "C:/Users/HAMID/Downloads/POTTA/src/assets/Coffee-cup-icon-design-template-on-transparent-background-pNG.png";
-import plate from "C:/Users/HAMID/Downloads/POTTA/src/assets/clipart1645023.png";
-
 export const NavItems = [
   {
     name: "Home",
@@ -11,6 +7,27 @@ export const NavItems = [
   { name: "About", link: "/about", id: "about" },
   { name: "Shop", link: "/shop", id: "shop" },
   { name: "contact", link: "/contact", id: "contact" },
+];
+
+export const heroImages = [
+  {
+    img: "https://images.unsplash.com/photo-1601121141461-920cb1993441?q=80&w=1099&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+    active: "hidden",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1633810543462-77c4a3b13f07?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+    active: "hidden",
+  },
+  {
+    img: "https://plus.unsplash.com/premium_photo-1709033404514-c3953af680b4?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    active: "hidden",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1608613381851-6a058de0dc11?q=80&w=1211&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    active: "",
+  },
 ];
 
 export const category = [

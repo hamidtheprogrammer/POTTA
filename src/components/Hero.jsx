@@ -1,34 +1,38 @@
 import React from "react";
-
-import { Button, heroImage, heroImage2 } from "../contants/Imports";
+import { Button, heroImage, heroImage2, heroImages } from "../contants/Imports";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="banner mt-20">
-      <div className="banner-inner max-md:flxcolCenter lg:w-[90%] max-md:gap-10">
-        <div className="relative flxColStart md:w-[45%]  max-md:flxcolCenter max-md:text-center max-md:w-[60vw] gap-5">
-          <p className="header-Id">POTTA POTTERY</p>
-          <h1 className="big-head">
-            <span className="text-nowrap">Distinctive Porcelain</span>{" "}
-            <span className="primaryTextCol">&</span> Stone Collection
-          </h1>
-          <p className="text-sm opacity-70 leading-6">
-            Exquisite and Contemporary Pottery Handcrafted by Our Master Artisan
-            in Porcelain and Stone
-          </p>
-          <Link to={"/shop"} className="mt-7">
-            <Button name={"shop collection"} />
-          </Link>
+    <section className="wrapper mt-[5.2rem]">
+      <div className="relative md:grid md:grid-cols-4 h-[100vh]">
+        <div className="absolute z-[99] w-full h-full top-0 left-0 flxColStart justify-center hero-banner ">
+          <div className="banner-inner lg:px-32 w-full relative flxColStart  max-md:flxcolCenter max-md:text-center gap-6">
+            <p className="header-Id">POTTA POTTERY</p>
+            <h1 className="big-head max-md:max-w-[35rem] md:max-w-[45rem]">
+              <span className="">Distinctive Porcelain</span>{" "}
+              <span className="primaryTextCol">&</span> Stone Collection
+            </h1>
+            <p className="text-sm opacity-70 leading-6 max-md:max-w-[15rem] md:max-w-[30rem]">
+              Exquisite and Contemporary Pottery Handcrafted by Our Master
+              Artisan in Porcelain and Stone
+            </p>
+            <Link to={"/shop"} className="mt-7">
+              <Button name={"shop collection"} />
+            </Link>
+          </div>
         </div>
-        <div className="relative h-[300px] w-[300px]">
-          <img src={heroImage} alt="vase image" />
-          <img
-            className="absolute w-[100%] h-[100%] top-0 left-0"
-            src={""}
-            alt=""
-          />
-        </div>
+        {heroImages.map((itm, index) => (
+          <div
+            className={`relative max-md:${itm.active} max-md:w-full max-md:h-full max-md:left-0 max-md:top-0 bg-black`}
+          >
+            <img
+              className="h-full object-cover w-full"
+              src={itm.img}
+              alt="vase image"
+            />
+          </div>
+        ))}
       </div>
     </section>
   );
