@@ -38,45 +38,46 @@ const Product = () => {
       <About aboutdts />
       <hr className="hr" />
       <div className="w-full relative mt-32 flxcolCenter gap-40 md:px-10">
-        {forYouProducts?.map((product, index) => (
-          <div
-            key={index}
-            className="relative w-full max-md:flxcolCenter md:gap-9 max-md:gap-10 md:flxrowCenter"
-          >
+        {forYouProducts?.length &&
+          forYouProducts.map((product, index) => (
             <div
-              className={`relative max-md:w-[90%] md:w-[90%] flxcolCenter ${
-                index === 1 && "md:order-2"
-              } `}
+              key={index}
+              className="relative w-full max-md:flxcolCenter md:gap-9 max-md:gap-10 md:flxrowCenter"
             >
-              <img
-                className="h-[500px] aspect-square"
-                src={product.img}
-                alt="product image"
-              />
-            </div>
-            <main
-              className={`relative w-[90%] flxColStart gap-6 ${
-                index === 1 && "md:order-1"
-              }`}
-            >
-              <h1 className="text-2xl max-w-[400px] text-balance font-[500] ">
-                {product.name}
-              </h1>
-              <p className="details-text md:max-w-[350px] text-[0.83rem] font-[500] ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-                totam molestias optio at veniam adipisci minus perspiciatis
-                officiis facilis dolorem voluptas harum dolorum ea,
-                reprehenderit velit soluta id, omnis fugiat.
-              </p>
-              <Link
-                to={`/details/${product.name}`}
-                className="underline cursor-Linkointer hover:opacity-70 text-black/85"
+              <div
+                className={`relative max-md:w-[90%] md:w-[90%] flxcolCenter ${
+                  index === 1 && "md:order-2"
+                } `}
               >
-                View Details
-              </Link>
-            </main>
-          </div>
-        ))}
+                <img
+                  className="h-[500px] aspect-square"
+                  src={product.img}
+                  alt="product image"
+                />
+              </div>
+              <main
+                className={`relative w-[90%] flxColStart gap-6 ${
+                  index === 1 && "md:order-1"
+                }`}
+              >
+                <h1 className="text-2xl max-w-[400px] text-balance font-[500] ">
+                  {product.name}
+                </h1>
+                <p className="details-text md:max-w-[350px] text-[0.83rem] font-[500] ">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                  totam molestias optio at veniam adipisci minus perspiciatis
+                  officiis facilis dolorem voluptas harum dolorum ea,
+                  reprehenderit velit soluta id, omnis fugiat.
+                </p>
+                <Link
+                  to={`/details/${product.name}`}
+                  className="underline cursor-Linkointer hover:opacity-70 text-black/85"
+                >
+                  View Details
+                </Link>
+              </main>
+            </div>
+          ))}
       </div>
       <hr className="hr" />
       <main className="mt-10 text-center flxcolCenter gap-9">

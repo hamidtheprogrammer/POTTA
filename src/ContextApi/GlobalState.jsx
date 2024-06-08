@@ -49,6 +49,7 @@ const GlobalState = ({ children }) => {
 
   useEffect(() => {
     setProducts(data);
+    console.log(products);
   }, [data]);
 
   return (
