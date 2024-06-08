@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import { about, category } from "../contants";
 import { About, Button, FillStore } from "../contants/Imports.jsx";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { GlobalContext } from "../ContextApi/GlobalState";
-import pic from "C:/Users/HAMID/Downloads/POTTA/src/assets/pngegg.png";
 
 const Product = () => {
   const { products } = useContext(GlobalContext);
-  const [forYouProducts, setForYouProducts] = useState([
-    products[0],
-    products[1],
-  ]);
+  const [forYouProducts, setForYouProducts] = useState(
+    products?.length && [products[0], products[1]]
+  );
 
   const [newArrivals, setNewArrivals] = useState(() => {
+    if (!products?.length) return;
     let productList = [];
     let counter = 0;
     while (counter < 9) {
@@ -40,7 +38,7 @@ const Product = () => {
       <About aboutdts />
       <hr className="hr" />
       <div className="w-full relative mt-32 flxcolCenter gap-40 md:px-10">
-        {forYouProducts.map((product, index) => (
+        {forYouProducts?.map((product, index) => (
           <div
             key={index}
             className="relative w-full max-md:flxcolCenter md:gap-9 max-md:gap-10 md:flxrowCenter"
@@ -50,10 +48,9 @@ const Product = () => {
                 index === 1 && "md:order-2"
               } `}
             >
-              <div className="absolute h-[50%] w-full bg-gray-100 z-[-1] translate-y-[50%] "></div>
               <img
-                className="h-[500px] aspect-auto"
-                src="https://assets-global.website-files.com/5ba96977bf120e1b45986c06/5bb9668024337c19082edcaf_orientovase.png"
+                className="h-[500px] aspect-square"
+                src={product.img}
                 alt="product image"
               />
             </div>
@@ -71,9 +68,12 @@ const Product = () => {
                 officiis facilis dolorem voluptas harum dolorum ea,
                 reprehenderit velit soluta id, omnis fugiat.
               </p>
-              <p className="underline cursor-pointer hover:opacity-70 text-black/85">
+              <Link
+                to={`/details/${product.name}`}
+                className="underline cursor-Linkointer hover:opacity-70 text-black/85"
+              >
                 View Details
-              </p>
+              </Link>
             </main>
           </div>
         ))}

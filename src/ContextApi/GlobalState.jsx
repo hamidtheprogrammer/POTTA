@@ -1,17 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 import React from "react";
-import { store } from "../contants";
-import { color } from "framer-motion";
-import { Cart } from "../contants/Imports";
+import useFetch from "../FetchApi/useFetch";
 export const GlobalContext = createContext();
 
 const GlobalState = ({ children }) => {
-  const [products, setProducts] = useState(store);
+  const [products, setProducts] = useState();
   const [currentPage, setCurrentPage] = useState("home");
   const [getCart, setGetCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [filter, setFilter] = useState({ category: "bowl", color: "white" });
+  const [filter, setFilter] = useState({ category: "bowl" });
+  const { data } = useFetch("http://localhost:8000/shop");
 
   const getCurrentPage = (page) => {
     setCurrentPage(page);
@@ -48,11 +47,9 @@ const GlobalState = ({ children }) => {
     );
   };
 
-  useEffect(() => {}, [filter]);
-
   useEffect(() => {
-    // console.log(filteredProducts);
-  }, [filteredProducts]);
+    setProducts(data);
+  }, [data]);
 
   return (
     <GlobalContext.Provider

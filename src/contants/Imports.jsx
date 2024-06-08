@@ -1,6 +1,7 @@
 import Nav from "../components/shared/Nav";
 import Hero from "../components/Hero";
 import Home from "../Pages/Home";
+import Category from "../Pages/Category";
 import Product from "../components/Product";
 import ProductCard from "../components/UI/ProductCard";
 import NavbarItems from "../components/shared/NavbarItems";
@@ -14,6 +15,7 @@ import Contact from "../Pages/Contact";
 import Details from "../Pages/Product-details";
 import useResetScrollBar from "../components/UI/useResetScrollBar";
 import { heroImages } from ".";
+import useFetch from "../FetchApi/useFetch";
 import logo from "../assets/Screenshot 2024-05-29 062948.png";
 import Cart from "../components/shared/Cart";
 import heroImage2 from "../assets/Flower Vase Png Image Background - Transparent Flower Vase Png, Png Download(1200x1200) - PinPng.jpg";
@@ -22,6 +24,7 @@ export {
   Nav,
   Hero,
   Home,
+  Category,
   Product,
   ProductCard,
   NavbarItems,
@@ -39,4 +42,5 @@ export {
   Cart,
   useResetScrollBar,
   heroImages,
+  useFetch,
 };

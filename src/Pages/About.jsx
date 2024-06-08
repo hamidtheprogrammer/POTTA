@@ -7,17 +7,21 @@ const About = ({ aboutdts }) => {
   useResetScrollBar();
   const aboutdetails = () => (
     <>
-      <aside className="max-md:flxcolCenter md:flxrowCenter md:justify-center gap-9 w-full mt-7">
+      <aside className="max-md:flxcolCenter md:flxrowCenter md:justify-center gap-20 w-full mt-7">
         {category.map((item) => (
           <Link
             key={item.name}
-            className={`rounded-full ${item.color} h-[200px] w-[200px] hover:opacity-85 hover:scale-[1.05] transition duration-500 transform`}
+            className={` ${item.color} h-[280px] w-[280px] flxcolCenter justify-center gap-6 hover:opacity-85 hover:scale-[1.05] transition duration-500 transform`}
             to={item.href}
           >
-            <div className="relative rounded-full h-[70%] w-[70%] mx-auto top-[50%] translate-y-[-50%] border-white border-4 flxcolCenter justify-center text-white">
-              <i className={`${item.image} text-6xl`}></i>
-              <p>{item.name}</p>
+            <div className="relative w-[80%] h-[80%] rounded-full aspect-square overflow-hidden">
+              <img
+                className="h-full w-full object-cover"
+                src={item.image}
+                alt=""
+              />
             </div>
+            <p className="">{item.name}</p>
           </Link>
         ))}
       </aside>

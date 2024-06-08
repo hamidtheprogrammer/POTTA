@@ -20,7 +20,6 @@ const NavbarItems = ({ styles, currentSection }) => {
           } `}
           key={item.id}
           to={item.link}
-          apnav
         >
           {item.name}
         </Link>

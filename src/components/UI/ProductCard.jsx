@@ -13,13 +13,13 @@ const ProductCard = ({
 }) => {
   const quickProductCard = () => (
     <div
-      className={`product-wrapper product-container hover:cursor-pointer border-b-[1px] border-black/50 hover:border-yellow-800 md:max-w-[500px]`}
+      className={`product-wrapper product-container hover:cursor-pointer border-b-[1px] border-black/50 hover:border-yellow-800 md:max-w-[300px] max-md:max-w-[450px]`}
     >
       <div className="relative overflow-hidden w-full flxcolCenter">
         <img
-          className="transition duration-700 hover:scale-[1.05] w-full object-cover"
-          src="https://images.unsplash.com/photo-1554577621-1a3def0b656c?q=80&w=386&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
+          className="transition duration-700 hover:scale-[1.05] w-full object-cover aspect-[7/9]"
+          src={img}
+          alt="product image"
         />
         <div className="top-0 left-0 h-full w-full absolute product-mask transition duration-500"></div>
       </div>
@@ -35,8 +35,8 @@ const ProductCard = ({
       <div className="relative overflow-hidden w-full flxcolCenter ">
         <img
           className="transition duration-700 hover:scale-[1.05] w-full object-cover"
-          src="https://images.unsplash.com/photo-1554577621-1a3def0b656c?q=80&w=386&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
+          src={img}
+          alt="product image"
         />
         <div className="top-0 left-0 h-full w-full absolute product-mask transition duration-500"></div>
       </div>

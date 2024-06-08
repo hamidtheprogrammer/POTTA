@@ -24,7 +24,7 @@ const Details = () => {
             price={product.price}
             category={product.category}
             quantity={product.quantity}
-            img={""}
+            img={product.img}
           />
         )}
       </main>

@@ -1,14 +1,14 @@
 import React from "react";
-import { Button, heroImage, heroImage2, heroImages } from "../contants/Imports";
+import { Button, heroImages } from "../contants/Imports";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
     <section className="wrapper mt-[5.2rem]">
-      <div className="relative md:grid md:grid-cols-4 h-[100vh]">
+      <div className="relative md:grid md:grid-cols-4 h-[90vh]">
         <div className="absolute z-[99] w-full h-full top-0 left-0 flxColStart justify-center hero-banner ">
           <div className="banner-inner lg:px-32 w-full relative flxColStart  max-md:flxcolCenter max-md:text-center gap-6">
-            <p className="header-Id">POTTA POTTERY</p>
+            <p className="header-Id">POTTA JEWELLERIES</p>
             <h1 className="big-head max-md:max-w-[35rem] md:max-w-[45rem]">
               <span className="">Distinctive Porcelain</span>{" "}
               <span className="primaryTextCol">&</span> Stone Collection
@@ -22,8 +22,9 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        {heroImages.map((itm, index) => (
+        {heroImages.map((itm) => (
           <div
+            key={Math.random()}
             className={`relative max-md:${itm.active} max-md:w-full max-md:h-full max-md:left-0 max-md:top-0 bg-black`}
           >
             <img
