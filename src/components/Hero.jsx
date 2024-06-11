@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="wrapper mt-[5.2rem]">
+    <section className="wrapper mt-[5.01rem]">
       <div className="relative md:grid md:grid-cols-4 h-[90vh]">
         <div className="absolute z-[99] w-full h-full top-0 left-0 flxColStart justify-center hero-banner ">
           <div className="banner-inner lg:px-32 w-full relative flxColStart  max-md:flxcolCenter max-md:text-center gap-6">

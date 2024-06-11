@@ -31,14 +31,9 @@ const ProductCard = ({
   );
 
   const detailedProductCard = () => (
-    <div className={`product-wrapper  gap-20`}>
+    <div className={`product-wrapper max-w-[30rem] gap-20`}>
       <div className="relative overflow-hidden w-full flxcolCenter ">
-        <img
-          className="transition duration-700 hover:scale-[1.05] w-full object-cover"
-          src={img}
-          alt="product image"
-        />
-        <div className="top-0 left-0 h-full w-full absolute product-mask transition duration-500"></div>
+        <img className="w-full object-cover" src={img} alt="product image" />
       </div>
       <div className="flxColStart gap-4">
         <p className="header-Id">PRODUCT DETAILS</p>
@@ -55,7 +50,7 @@ const ProductCard = ({
           <span className="details-text ">{category}</span>
         </p>
         <p>
-          <span className="font-[430]">Quantity: </span>{" "}
+          <span className="font-[430]">Stock: </span>{" "}
           <span className="details-text ">{quantity}</span>
         </p>
         <div onClick={addItem} className="mt-5 cursor-pointer">

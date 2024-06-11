@@ -8,12 +8,12 @@ const Details = () => {
   useResetScrollBar();
   const { products, addToCart } = useContext(GlobalContext);
   const params = useParams();
-  const product = products.find((itm) => params.name === itm.name);
+  const product = products?.find((itm) => params.id === itm._id);
 
   return (
     <section className="wrapper w-full">
       <Banner head={"Details"} />
-      <main className="w-full max-md:flxcolCenter mt-24">
+      <main className="w-full md:px-10 max-md:flxcolCenter mt-24">
         {product && (
           <ProductCard
             addItem={() => {

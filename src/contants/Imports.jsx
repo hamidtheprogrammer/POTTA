@@ -13,14 +13,18 @@ import Banner from "../components/UI/Banner";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import Details from "../Pages/Product-details";
+import Login from "../Pages/Login";
 import useResetScrollBar from "../components/UI/useResetScrollBar";
 import { heroImages } from ".";
+import Filter from "../components/UI/Filter";
+import FilterMobileView from "../components/UI/FilterMobileView";
 import useFetch from "../FetchApi/useFetch";
 import logo from "../assets/Screenshot 2024-05-29 062948.png";
 import Cart from "../components/shared/Cart";
 import heroImage2 from "../assets/Flower Vase Png Image Background - Transparent Flower Vase Png, Png Download(1200x1200) - PinPng.jpg";
 import heroImage from "../assets/Realistic-porselain-vase-for-flowers-or-plants-isolated-on-transparent-background-PNG.png";
 export {
+  Login,
   Nav,
   Hero,
   Home,
@@ -43,4 +47,6 @@ export {
   useResetScrollBar,
   heroImages,
   useFetch,
+  Filter,
+  FilterMobileView,
 };

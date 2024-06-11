@@ -1,25 +1,40 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const useFetch = (url) => {
+const useFetch = ({ url, payLoad, get, post, put, delet }) => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
+
   const fetchData = async () => {
     try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        console.log("Error while fetching data");
-      }
-
-      const result = await response.json();
-      setData(result);
+      setLoading(true);
+      const response = await axios.get(url);
+      setData(response.data);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
+      setError(error);
+      console.log(error);
+    }
+  };
+  const postData = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.post(url, { data: payLoad });
+      setData(response.data);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setError(error);
       console.log(error);
     }
   };
 
   useEffect(() => {
-    fetchData();
+    get ? fetchData() : post && postData();
   }, [url]);
-  return { data };
+  return { data, loading, error };
 };
 
 export default useFetch;

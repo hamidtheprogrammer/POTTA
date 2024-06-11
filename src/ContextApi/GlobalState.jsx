@@ -1,32 +1,36 @@
 import { createContext, useEffect, useState } from "react";
 import React from "react";
 import useFetch from "../FetchApi/useFetch";
+import { stores } from "../contants";
 export const GlobalContext = createContext();
 
 const GlobalState = ({ children }) => {
-  const [products, setProducts] = useState();
+  const [currentUser, setCurrentUser] = useState({
+    isAuthenticated: false,
+    user: null,
+  });
+  const [products, setProducts] = useState(stores);
   const [currentPage, setCurrentPage] = useState("home");
   const [getCart, setGetCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [filter, setFilter] = useState({ category: "bowl" });
-  const { data } = useFetch("http://localhost:8000/shop");
+  const { data } = useFetch({ url: "http://localhost:8000/shop", get: true });
 
   const getCurrentPage = (page) => {
     setCurrentPage(page);
   };
   const addToCart = (item) => {
-    const checkItem = products.find((prod) => prod.name === item.name);
-    let incrementItem = getCart.find((prod) => prod.name === item.name);
-    if (incrementItem) {
-      incrementItem = { ...incrementItem, quantity: incrementItem.quantity++ };
-      checkItem.quantity--;
-      return;
-    }
-    if (checkItem?.quantity > 0) {
-      const addItem = { ...checkItem, quantity: 1 };
-      setGetCart((prevCart) => [...prevCart, addItem]), checkItem.quantity--;
-    }
+    const checkItem = products.find((prod) => prod._id === item._id);
+    let incrementItem = getCart.find((prod) => prod._id === item._id);
+
+    // if (incrementItem) {
+    //   incrementItem = { ...incrementItem, quantity: incrementItem.quantity++ };
+    //   checkItem.quantity--;
+    //   return;
+    // }
+    // if (checkItem?.quantity > 0) {
+    //   const addItem = { ...checkItem, quantity: 1 };
+    //   setGetCart((prevCart) => [...prevCart, addItem]), checkItem.quantity--;
+    // }
   };
 
   const removeItemFromCart = (item) => {
@@ -48,8 +52,7 @@ const GlobalState = ({ children }) => {
   };
 
   useEffect(() => {
-    setProducts(data);
-    console.log(products);
+    // setProducts(data);
   }, [data]);
 
   return (
@@ -63,6 +66,8 @@ const GlobalState = ({ children }) => {
         getCart,
         isCartOpen,
         setIsCartOpen,
+        currentUser,
+        setCurrentUser,
       }}
     >
       {children}
